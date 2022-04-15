@@ -7,9 +7,6 @@ const router = require('./router')
 
 const app = express()
 
-const mysql = require('mysql2');
-const connection = mysql.createConnection(process.env.DATABASE_URL);
-console.log('Connected to PlanetScale!');
 
 hbs.registerPartials(path.join(__dirname, 'vistas', 'partials'))
 app.set('views', path.join(__dirname, 'vistas'))
