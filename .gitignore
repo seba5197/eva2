@@ -1,0 +1,8 @@
+.env
+.next
+.yarn-integrity
+.node-repl-history
+.eslintcache
+node_modules/
+.npm
+jspm_package/
