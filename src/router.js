@@ -6,14 +6,27 @@ const UsuariosDAO = require('./model/UsuariosDAO.js')
 const router = express.Router()
 const sqlClient = new SqlClient()
 
+// Controllers
 const Usuariosdao = new UsuariosDAO(sqlClient)
 
-Usuariosdao.getAll().then(rows => console.log(rows))
+//Usuariosdao.getAll().then(rows => console.log(rows))
 
-// Controllers
-const vistas = new Cargavistas()
+
+const vistas = new Cargavistas(sqlClient)
+
 // Routes
 router.get('/', vistas.renderInicio)
+router.post('/', vistas.renderInicioagrega)
+router.post('/mod', vistas.renderModifica)
+router.get('/mod', vistas.renderModificaform)
+router.post('/del', vistas.renderDelete)
+router.post('/getbyid', vistas.renderById)
+
+router.get('/del', vistas.renderNotFound)
+
+
+router.get('*', vistas.renderNotFound)
+
 
 //router.get('*', pageController.renderNotFound)
 

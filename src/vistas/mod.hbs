@@ -1,0 +1,24 @@
+
+<div class="card">
+    <div class="card-header">
+        <center> 
+        <h1>{{titulo}} </h1>
+    {{#each usuariosdatos}}
+        <p>
+        {{this.nombre}} {{this.id}}
+        </p>
+        </center>
+    </div>
+    <div class="card-body">
+        <form method="post" action="/mod">
+            <h5 class="card-title"><input type="text" class="form-control" name="nombre" placeholder="{{this.nombre}}" ></h5>
+            <p class="card-text"><input type="text"  class="form-control"  name="correo" placeholder="{{this.correo}}" ></p>
+            <input type="hidden" name="id" value="{{this.id}}">
+            <center>
+                <b><a href="/" class="btn btn-warning"><i class="bi bi-house-fill"></i> Regresar</a></b>
+                <button type='submit' class="btn btn-primary">Modificar</button>
+            </center>
+        </form>
+    {{/each}}
+</div>
+</div>

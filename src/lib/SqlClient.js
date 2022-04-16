@@ -3,7 +3,7 @@ const mysql = require('mysql2/promise')
 
 class SqlClient{
 constructor(){
-this.pool = mysql.createPool({url: process.env.DATABASE_URL})
+this.pool = mysql.createPool({uri: process.env.DATABASE_URL})
 this.query = this.query.bind(this)
 }
 async query (sql,params){

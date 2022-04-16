@@ -12,14 +12,13 @@ hbs.registerPartials(path.join(__dirname, 'vistas', 'partials'))
 app.set('views', path.join(__dirname, 'vistas'))
 app.set('view engine', 'hbs')
 
-
-
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-
+app.use('/media', express.static(__dirname + '/media'))
 app.use(morgan('dev'))
 app.use(express.static(path.join(__dirname, 'public')))
 app.use('/', router)
+
 
 
 module.exports = app
