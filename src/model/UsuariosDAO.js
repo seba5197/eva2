@@ -31,7 +31,7 @@ class UsuariosDAO{
     }
 
     async update(usuario) {
-        const id = ParseInt(usuario.id)
+        const id = usuario.id
         const correo = usuario.correo
         const nombre = usuario.nombre
         console.log (usuario)
